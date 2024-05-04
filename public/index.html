@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Minha Página Web</title>
+</head>
+<body>
+    <header>
+        <h1>Minha Página Web</h1>
+        <h4><a href="contas.html">Todas as Contas!</a></h4>
+    </header>
+
+    <main>
+        <form id="formConta">
+            <label for="primeiro">Primeiro número:</label>
+            <input type="number" id="primeiro" name="primeiro" required><br><br>
+
+            <label for="segundo">Segundo número:</label>
+            <input type="number" id="segundo" name="segundo" required><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="resultado"></div>
+    </main>
+
+    <main>
+        <form id="formBusca">
+            <label for="busca">Buscar conta por ID:</label>
+            <input type="number" id="busca" name="busca" required><br><br>
+            <button type="submit">Buscar</button>
+        </form>
+        
+        <div id="resultadoBusca"></div>
+    </main>
+    
+    
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

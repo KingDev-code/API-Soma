@@ -1,0 +1,148 @@
+/* Reset de estilos para garantir consistência */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para o body e html */
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #050A30, #001021); /* Gradiente azul bem escuro */
+    color: #fff; /* Texto em branco */
+}
+
+/* Estilos para o header */
+header {
+    background-color: #001021; /* Azul escuro para o cabeçalho */
+    padding: 20px;
+    text-align: center; /* Centraliza o texto dentro do cabeçalho */
+    border-bottom: 2px solid #0652DD; /* Borda inferior */
+}
+
+header h1 {
+    color: #fff; /* Texto do cabeçalho em branco */
+}
+
+/* Estilos para o main */
+main {
+    padding: 20px;
+}
+
+/* Estilos para o formulário */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo transparente com leve opacidade para o formulário */
+    padding: 30px;
+    border-radius: 15px; /* Cantos arredondados */
+    border: 2px solid #0652DD; /* Borda sólida */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff; /* Texto em branco */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+input[type="number"],
+button {
+    padding: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: #0652DD; /* Azul claro para os inputs e botão */
+    color: #fff; /* Texto em branco */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer;
+}
+
+input[type="number"]:focus,
+button:focus {
+    outline: none;
+}
+
+/* Estilos para o resultado */
+#resultado {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo transparente para o resultado */
+    display: block; /* Esconde o resultado inicialmente */
+    color: #fff; /* Texto em branco */
+    font-size: 18px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    transition: opacity 0.5s ease; /* Transição de opacidade */
+}
+
+/* Estilos para o resultado em forma de tabela */
+#resultadoBusca {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 18px;
+    transition: opacity 0.5s ease;
+    display: none; /* Inicialmente escondido */
+}
+
+/* Estilos para a tabela */
+#resultadoBusca table {
+    width: 100%; /* Tabela ocupa toda a largura */
+    border-collapse: collapse; /* Colapso das bordas da tabela */
+}
+
+#resultadoBusca th, #resultadoBusca td {
+    border: 1px solid #000; /* Bordas das células */
+    padding: 8px; /* Espaçamento interno das células */
+    text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+#resultadoBusca th {
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo para cabeçalhos */
+    color: #fff; /* Cor do texto nos cabeçalhos */
+}
+
+#resultadoBusca td {
+    background-color: rgba(0, 0, 0, 0.1); /* Cor de fundo para células */
+    color: #000; /* Cor do texto nas células */
+}
+
+
+
+
+/* Estilos para a tabela de contas */
+#tabelaContas {
+    border-collapse: collapse; /* Colapse das bordas da tabela */
+    width: 100%;
+    margin: 0 auto; /* Margem automática nas laterais para centralizar horizontalmente */
+    width: 80%; /* Largura da tabela */
+    border-collapse: collapse; /* Colapse das bordas da tabela */
+}
+
+#tabelaContas th, #tabelaContas td {
+    border: 1px solid #333; /* Bordas das células */
+    padding: 8px; /* Espaçamento interno das células */
+    text-align: center; /* Alinhamento do texto ao centro */
+}
+
+#tabelaContas th {
+    background-color: #222; /* Cor de fundo para o cabeçalho */
+    color: #fff; /* Cor do texto do cabeçalho */
+}
+
+#tabelaContas tbody tr:nth-child(even) {
+    background-color: #444; /* Cor de fundo para as linhas pares */
+}
+
+#tabelaContas tbody tr:hover {
+    background-color: #666; /* Cor de fundo ao passar o mouse sobre a linha */
+}
