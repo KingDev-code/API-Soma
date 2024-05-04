@@ -20,6 +20,18 @@ const Conta = {
     },
     deletarConta(id, callback) {
         return db.query('DELETE FROM contas WHERE id = ?', [id], callback);
+    },
+    atualizarConta(id, novoPrimeiro, novoSegundo, callback) {
+        const novoResultado = novoPrimeiro + novoSegundo;
+
+        db.query('UPDATE contas SET primeiro = ?, segundo = ?, resultado = ? WHERE id = ?', [novoPrimeiro, novoSegundo, novoResultado, id], (err, result) => {
+            if (err) {
+                callback(err, null);
+                return;
+            }
+
+            callback(null, result);
+        });
     }
 }
 

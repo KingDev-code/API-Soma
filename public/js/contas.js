@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', async function () {
                     <td>
                         <button onclick="deletarConta(${conta.id})">Deletar</button>
                     </td>
+                    <td>
+                        <button><a href="update.html?id=${conta.id}">Atualizar</a></button>
+                    </td>
                 </tr>
             `;
         });

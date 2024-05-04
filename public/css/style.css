@@ -146,3 +146,17 @@ button:focus {
 #tabelaContas tbody tr:hover {
     background-color: #666; /* Cor de fundo ao passar o mouse sobre a linha */
 }
+
+
+/* Estilos para o resultado */
+#resultadoAtualizacao {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo transparente para o resultado */
+    display: block; /* Esconde o resultado inicialmente */
+    color: #fff; /* Texto em branco */
+    font-size: 18px; /* Tamanho da fonte */
+    text-align: center; /* Centraliza o texto */
+    transition: opacity 0.5s ease; /* Transição de opacidade */
+}

@@ -74,6 +74,26 @@ const contaController = {
                 message: 'Conta deletada com sucesso'
             });
         });
+    }, 
+
+    atualizarConta(req, res) {
+        const idConta = req.params.id;
+        const novoPrimeiro = req.body.primeiro;
+        const novoSegundo = req.body.segundo;
+
+        Conta.atualizarConta(idConta, novoPrimeiro, novoSegundo, (err, resultado) => {
+            if (err) {
+                console.error('Erro ao atualizar conta: ', err);
+                return res.status(500).json({
+                    error: 'Erro ao atualizar conta'
+                });
+            }
+
+            console.log('Conta atualizada com sucesso:', resultado);
+            return res.status(200).json({
+                message: 'Conta atualizada com sucesso'
+            });
+        });
     }
     // others functions
 }
