@@ -58,6 +58,23 @@ const contaController = {
         });
     },    
 
+    deletarConta(req, res) {
+        const idConta = req.params.id;
+
+        Conta.deletarConta(idConta, (err, resultado) => {
+            if (err) {
+                console.error('Erro ao deletar conta: ', err);
+                return res.status(500).json({
+                    error: 'Erro ao deletar conta'
+                });
+            }
+
+            console.log('Conta deletada com sucesso:', resultado);
+            return res.status(200).json({
+                message: 'Conta deletada com sucesso'
+            });
+        });
+    }
     // others functions
 }
 

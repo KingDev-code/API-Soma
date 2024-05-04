@@ -17,7 +17,10 @@ const Conta = {
     },
     buscarConta(id, callback) {
         return db.query('SELECT * FROM contas WHERE id = ?', [id], callback);
-    }    
+    },
+    deletarConta(id, callback) {
+        return db.query('DELETE FROM contas WHERE id = ?', [id], callback);
+    }
 }
 
 module.exports = Conta;

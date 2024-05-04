@@ -11,19 +11,47 @@ document.addEventListener('DOMContentLoaded', async function () {
             throw new Error('Erro ao buscar contas.');
         }
 
-        let tabelaHTML = '<table>';
-        tabelaHTML += '<thead><tr><th>ID</th><th>Primeiro</th><th>Segundo</th><th>Resultado</th></tr></thead>';
-        tabelaHTML += '<tbody>';
+        let tabelaHTML = '';
 
         data.forEach(conta => {
-            tabelaHTML += `<tr><td>${conta.id}</td><td>${conta.primeiro}</td><td>${conta.segundo}</td><td>${conta.resultado}</td></tr>`;
+            tabelaHTML += `
+                <tr>
+                    <td>${conta.id}</td>
+                    <td>${conta.primeiro}</td>
+                    <td>${conta.segundo}</td>
+                    <td>${conta.resultado}</td>
+                    <td>
+                        <button onclick="deletarConta(${conta.id})">Deletar</button>
+                    </td>
+                </tr>
+            `;
         });
 
-        tabelaHTML += '</tbody></table>';
-
-        tabelaContas.innerHTML = tabelaHTML;
+        tabelaContas.querySelector('tbody').innerHTML = tabelaHTML;
     } catch (error) {
         console.error('Erro:', error);
         tabelaContas.textContent = 'Erro ao buscar contas.';
     }
 });
+
+async function deletarConta(id) {
+    try {
+        const response = await fetch(`http://localhost:3000/api/contas/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao deletar conta.');
+        }
+
+        console.log('Conta deletada com sucesso!');
+        // Recarregar a página para atualizar a lista de contas
+        window.location.reload();
+    } catch (error) {
+        console.error('Erro:', error);
+        alert('Erro ao deletar conta.');
+    }
+}
